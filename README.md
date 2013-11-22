@@ -17,6 +17,8 @@ programs are in your $PATH.
 The scaffolding tools with links to their publications and where to download
 the code are as follows.
 
+ * ABySS [code] [ABySS code], [paper] [ABySS paper]
+ * Bambus2 (part of the AMOS package) [code] [Bambus2 code], [paper] [Bambus2 paper]
  * GRASS [code] [GRASS code], [paper] [GRASS paper]
  * MIP [code] [MIP code], [paper] [MIP paper]
  * Opera [code] [Opera code], [paper] [Opera paper]
@@ -161,7 +163,10 @@ We now have our reference sequence, contigs and paired reads. The analysis
 proceeds as above in the "Protocol to analyse scaffolds" section.
 
 
-
+  [ABySS code]: http://www.bcgsc.ca/platform/bioinfo/software/abyss
+  [ABySS paper]: http://genome.cshlp.org/content/19/6/1117
+  [Bambus2 code]: http://sourceforge.net/projects/amos/
+  [Bambus2 paper]: http://bioinformatics.oxfordjournals.org/content/27/21/2964.long
   [GRASS code]: https://code.google.com/p/tud-scaffolding/
   [GRASS paper]: http://bioinformatics.oxfordjournals.org/content/28/11/1429
   [MIP code]: http://www.cs.helsinki.fi/u/lmsalmel/mip-scaffolder/
