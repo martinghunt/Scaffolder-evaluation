@@ -115,11 +115,22 @@ Make test case contigs and reads for scaffolding using
     scaff_test_make_test_cases.sh <seed>
 
 where `<seed>` is one of 1,2,...,5 to make one of the 5 repetitions of the data.
-The important files for test case n are:
+This will make all the files for the 11 test cases in the current directory.
+
+From the same directory that `scaff_test_make_test_cases.sh` was run, you can run all
+of the supported scaffolders on test case `n` using
+
+    scaff_test_run_test_case.sh output_directory n
+
+Or run all of them (if you are using bash) with
+
+    for n in {1..11}; do scaff_test_run_test_case.sh test.$n.OUT $n; done
+
+If you want to run a new scaffolder on a test case, the important files for test case `n` are:
 
  * `test.n.ref.fa` - the 'reference' genome
  * `test.n.contigs.fa.tag.uniquely-tagged.contigs.fa` - the tagged contigs for scaffolding
- * `test.n.reads_1.fq`, `test.n.reads_2.fq` - the reads to use for scaffolding
+ * `test.n.reads_1.fq`, `test.n.reads_2.fq` - the forward and reverse reads to use for scaffolding. Alternatively, the same reads are also in interleaved format in the file `test.n.reads.fq`.
 
 Run the scaffolder to make a file of scaffolds called `scaffolds.fa`.  The
 minimum, average and maximum insert sizes are 350, 500 and 650. Use 0.4
@@ -129,7 +140,7 @@ accuracy of the scaffolds with the following.
     scaff_test_check_using_tags.py 500 test.n.contigs.fa.tag scaffolds.fa test.n.ref.fa.fai check_scaffolds
     scaff_test_check_using_tags_get_contig_layout.py check_scaffolds check_scaffolds.graph
 
-The second script made a using Graphviz, so you can easily see what the scaffolder
+The second script made a graph called `check_scaffolds.graph.pdf` using Graphviz, so you can easily see what the scaffolder
 did.
 
 Note that if you use SGA on these test cases, it will break unless you
