@@ -196,7 +196,7 @@ proceeds as above in the "Protocol to analyse scaffolds" section.
   [SSPACE paper]: http://bioinformatics.oxfordjournals.org/content/27/4/578
   [Python]: http://www.python.org/
   [Fastaq]: https://github.com/sanger-pathogens/Fastaq
-  [Pysam]: http://wwwfgu.anat.ox.ac.uk/~andreas/documentation/samtools/api.html
+  [Pysam]: https://code.google.com/p/pysam/
   [MUMmer]: http://mummer.sourceforge.net/
   [Bowtie2]: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
   [blastall]: http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download
