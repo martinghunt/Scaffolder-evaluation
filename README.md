@@ -168,7 +168,7 @@ Generate reads with scripts from the Fastaq package:
     fastaq_to_perfect_reads genome_no_plasmid.fa fake_reads.3kb.fq 3000 200 20 76
     fastaq_to_perfect_reads genome_no_plasmid.fa fake_reads.500bp.fq 500 30 20 76
     fastaq_deinterleave fake_reads.3kb.fq fake_reads.3kb_1.fq fake_reads.3kb_2.fq
-    fastaq_deinterleave fake_reads.500bp.fq fake_reads.500bp_2.fq fake_reads.500bp_2.fq
+    fastaq_deinterleave fake_reads.500bp.fq fake_reads.500bp_1.fq fake_reads.500bp_2.fq
 
 We now have our reference sequence, contigs and paired reads. The analysis
 proceeds as above in the "Protocol to analyse scaffolds" section.
