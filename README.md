@@ -4,6 +4,11 @@ Scaffolder Evaluation
 Wrapper scripts to run genome assembly scaffolding tools and
 scripts to analyse the output for accuracy.
 
+These were used in the paper ["A comprehensive evaluation of assembly
+scaffolding tools"] [review paper], Genome Biology 2014, 15:R42.
+DOI: 10.1186/gb-2014-15-3-r42.
+If you use any of the scripts in your own work, please cite this paper.
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 Wrapper scripts
@@ -13,6 +18,11 @@ The `Wrapper-scripts/` directory contains a script for each of the tools
 listed below. Note that none of these tools are included in the code. Each
 one must be installed separately and the scripts assume that the relevant
 programs are in your $PATH.
+
+Each script can take up to two sets of read pairs, and assumes that the
+orientation of these reads is to be "innies" (i.e. like a paired end
+library). If you have a mate pair library ("outties"), then you will need to
+reverse complement your reads before running one of the scaffolders.
 
 The scaffolding tools with links to their publications and where to download
 the code are as follows.
@@ -174,6 +184,7 @@ We now have our reference sequence, contigs and paired reads. The analysis
 proceeds as above in the "Protocol to analyse scaffolds" section.
 
 
+  [review paper]: http://genomebiology.com/2014/15/3/R42
   [ABySS code]: http://www.bcgsc.ca/platform/bioinfo/software/abyss
   [ABySS paper]: http://genome.cshlp.org/content/19/6/1117
   [Bambus2 code]: http://sourceforge.net/projects/amos/
