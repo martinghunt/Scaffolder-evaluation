@@ -109,6 +109,8 @@ which has the counts of tag types at its end. The tag types are bitwise flags
 
 8 -- tags originate from the same reference sequence but are not in the correct order.
 
+16 -- this was used for debugging and can be ignored.
+
 For example, a flag of 5 means that 4+1 happened, i.e. a pair of tags that
 originated from the same reference sequence, but their orientation and order
 were incorrect.  Similarly, 12=8+4 means that two tags were from the same
