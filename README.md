@@ -81,9 +81,13 @@ The starting point is the following data:
    scaffolding.
 
 We need to make artificial contigs from the assembly contigs, with sequence
-tags that allow tracking of the contigs before and after scaffolding. You can either:
+tags that allow tracking of the contigs before and after scaffolding. You
+have two options:
 
- * download [this tarball] [data tarball] of pre-computed data that were used for the paper, or
+ * download a tarball of pre-computed data that were used for the paper from
+
+       ftp://ftp.sanger.ac.uk/pub/pathogens/mh12/Scaffolder_evaluation/Scaffolder_evaluation_data.tar.gz
+
  * run the following three commands to make your own data
 
 To make your data:
@@ -232,4 +236,3 @@ proceeds as above in the "Protocol to analyse scaffolds" section.
   [SAMtools]: http://samtools.sourceforge.net/
   [R]: http://www.r-project.org/
   [GAGE]: http://gage.cbcb.umd.edu/
-  [data tarball]: ftp://ftp.sanger.ac.uk/pub/pathogens/mh12/Scaffolder_evaluation/Scaffolder_evaluation_data.tar.gz
