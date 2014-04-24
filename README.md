@@ -8,6 +8,8 @@ These were used in the paper ["A comprehensive evaluation of assembly
 scaffolding tools"] [review paper], Genome Biology 2014, 15:R42.
 DOI: 10.1186/gb-2014-15-3-r42.
 If you use any of the scripts in your own work, please cite this paper.
+For details on the methods, please see the manuscript. The methods are
+not explained in this readme.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -59,36 +61,49 @@ Prerequisites:
  * [MUMmer] [MUMmer]
  * [Bowtie2] [Bowtie2]
  * [SAMtools] [SAMtools]
- * [Graphviz] [Graphviz]
+ * [Graphviz] [Graphviz] (optional, only needed for the test cases, not for the real data)
  * [R] [R]
- * [blastall], from NCBI's legacy BLAST executables
+ * [blastall], from NCBI's legacy BLAST executables (optional, this is only used to generate the test cases)
 
 Take a copy of the scripts in the `Analysis-scripts/` directory and make sure
 they are all in your $PATH to run the analysis.
 
 
-Protocol to analyse scaffolds
------------------------------
+Protocol to analyse a scaffolder's output
+-----------------------------------------
 
 The starting point is the following data:
 
- * `assembly_contigs.fasta` - a FASTA file of the contigs that are to be scaffolded
+ * `assembly_contigs.fa` - a FASTA file of the contigs that are to be scaffolded
  * `reference.fasta` - a FASTA file of the reference genome
  * `reads_1.fastq`, `reads_2.fastq` - FASTQ files of the reads that will be used to scaffold the contigs.
+   Note that the reads are not used to analyse the resulting scaffolds. They are only used for the actual
+   scaffolding.
 
-First, make artificial contigs from the assembly contigs.
+We need to make artificial contigs from the assembly contigs, with sequence
+tags that allow tracking of the contigs before and after scaffolding. You can either:
 
-    scaff_test_ctg_to_perfect_ctg.py assembly_contigs.fa reference.fa artificial_contigs
+ * download [this tarball] [data tarball] of pre-computed data that were used for the paper, or
+ * run the following three commands to make your own data
 
-Now make sequence tags and only keep the artificial contigs that could be successfully tagged.
+To make your data:
 
-    scaff_test_make_unique_tags.py artificial_contigs.fa reference.fa artificial_contigs.tag
+1. Make artificial contigs from the original contigs.
+
+        scaff_test_ctg_to_perfect_ctg.py assembly_contigs.fa reference.fa artificial_contigs
+
+2. Make sequence tags and only keep the artificial contigs that could be successfully tagged.
+
+        scaff_test_make_unique_tags.py artificial_contigs.fa reference.fa artificial_contigs.tag
+
+3. We will need to index the reference for later.
+
+        samtools faidx reference.fa
 
 Run your scaffolding tool of choice on the tagged artificial contigs
 `artificial_contigs.tag.uniquely-tagged.contigs.fa`, to make a file of scaffolds called `scaffolds.fa`.
 Then check the output of the scaffolder:
 
-    samtools faidx reference.fa
     scaff_test_check_using_tags.py <insert size> artificial_contigs.tag scaffolds.fa reference.fa.fai check_scaffolds
 
 where `<insert size>` should be set to the insert size of your paired reads.
@@ -217,3 +232,4 @@ proceeds as above in the "Protocol to analyse scaffolds" section.
   [SAMtools]: http://samtools.sourceforge.net/
   [R]: http://www.r-project.org/
   [GAGE]: http://gage.cbcb.umd.edu/
+  [data tarball]: ftp://ftp.sanger.ac.uk/pub/pathogens/mh12/Scaffolder_evaluation/Scaffolder_evaluation_data.tar.gz
