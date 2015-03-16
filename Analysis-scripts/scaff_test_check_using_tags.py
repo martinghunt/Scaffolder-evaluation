@@ -6,7 +6,7 @@ import os
 import sys
 from operator import attrgetter
 
-from fastaq import *
+from pyfastaq import *
 import pysam
 
 parser = argparse.ArgumentParser(

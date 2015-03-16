@@ -4,7 +4,7 @@ import argparse
 import sys
 import copy
 import os
-from fastaq import *
+from pyfastaq import *
 
 parser = argparse.ArgumentParser(
     description = 'Used to generate contig test sets and reads.',
@@ -78,7 +78,7 @@ for i in range(len(scaffolds)):
     utils.close(f)
     reads_fname = scaff_fname + '.reads.fq'
     reads_fastq_files.append(reads_fname)
-    cmd = 'fastaq_to_perfect_reads ' + scaff_fname + ' ' + reads_fname + ' 500 30 ' + coverage + ' 76'
+    cmd = 'fastaq to_perfect_reads ' + scaff_fname + ' ' + reads_fname + ' 500 30 ' + coverage + ' 76'
     utils.syscall(cmd)
     os.unlink(scaff_fname)
 

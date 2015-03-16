@@ -2,7 +2,7 @@
 
 import argparse
 import os
-from fastaq import utils
+from pyfastaq import utils
 import pysam
 
 parser = argparse.ArgumentParser(

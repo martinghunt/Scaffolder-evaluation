@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from fastaq import *
+from pyfastaq import *
 
 parser = argparse.ArgumentParser(
     description = 'Used to generate a fake set of contigs from a genome. At regular intervals it puts in a gap and then breaks into contigs',

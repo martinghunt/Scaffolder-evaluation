@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 seed=$1
-fastaq_make_random_contigs --seed $seed --name_by_letters 8 5000 all_contigs.fa
+fastaq make_random_contigs --seed $seed --name_by_letters 8 5000 all_contigs.fa
 formatdb -p F -i all_contigs.fa
 blastall -p blastn -i all_contigs.fa -d all_contigs.fa -m8 -e1e-10 -o all_contigs.fa.blastn
 rm formatdb.log all_contigs.fa.???

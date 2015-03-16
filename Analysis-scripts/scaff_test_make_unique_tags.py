@@ -5,7 +5,7 @@ import os
 import copy
 import sys
 
-from fastaq import *
+from pyfastaq import *
 import pysam
 #from scaffold_test_helper import *
 

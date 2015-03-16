@@ -5,7 +5,7 @@ import os
 import copy
 import shutil
 import sys
-from fastaq import sequences, utils, intervals, tasks
+from pyfastaq import sequences, utils, intervals, tasks
 
 
 # check required nucmer programs are in path
